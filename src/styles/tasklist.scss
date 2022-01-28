@@ -12,6 +12,7 @@ section.task-list {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     
     h2 {
       color: var(--text-title);
@@ -58,6 +59,25 @@ section.task-list {
           filter: brightness(0.95);
         }
       }
+    }
+
+    .msg {
+      margin-top: 0.5rem;
+      flex-basis: 100%;
+      text-align: right;
+      
+      > .msg-success, .msg-error{
+        color: var(--red);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 350ms;
+
+        &.-visible {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      
     }
   }
 
